@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            min-width: 420px;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+        }
+        input, textarea {
+            width: 420px;
+        }
+        input#save {
+            font-weight: bold; width: auto;
+        }
+    </style>
+</head>
+<body>
+<form id="setLink">
+    <p>
+        <label for="token">Token</label><br />
+        <input type="text" id="token" name="token" size="50" value="" />
+    </p>
+    <p>
+        <input id="save" type="submit" value="Sauvegarder" />
+        <span id="status-display"></span>
+    </p>
+</form>
+<script src="popup.js"></script>
+</body>
+</html>

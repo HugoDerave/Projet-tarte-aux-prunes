@@ -1,0 +1,30 @@
+{
+  "name": "CIR64 linker",
+  "version": "0.1",
+  "permissions": ["tabs","activeTab","declarativeContent","storage"],
+  "description": "Récup des données pour cir64",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [{
+    "matches": ["*://*.yncrea.fr/*"],
+    "js": ["content.js"]
+  }],
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "16.png",
+      "32": "32.png",
+      "48": "48.png",
+      "128": "128.png"
+    }
+  },
+  "icons": {
+    "16": "16.png",
+    "32": "32.png",
+    "48": "48.png",
+    "128": "128.png"
+  },
+  "manifest_version": 2
+}
