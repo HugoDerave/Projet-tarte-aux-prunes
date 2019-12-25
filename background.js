@@ -28,8 +28,9 @@ function doStuffWithDom(domContent) {
 
     chrome.storage.sync.get("key", function(items){
         if(items["key"] != null) {
+            let manifestData = chrome.runtime.getManifest();
 
-            let postUrl = 'https://cir64.fr/GLOBAL_V3/remote/push.php?v=0.1&token='+items["key"];
+            let postUrl = 'https://cir64.fr/GLOBAL_V3/remote/push.php?v='+manifestData.version+'&token='+items["key"];
             let xhr = new XMLHttpRequest();
             xhr.open('POST', postUrl, true);
             let params = 'data=' + encodeURIComponent(topush);
