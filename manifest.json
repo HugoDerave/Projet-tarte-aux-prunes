@@ -1,6 +1,6 @@
 {
   "name": "CIR64 linker",
-  "version": "0.1",
+  "version": "0.2",
   "permissions": ["tabs","activeTab","declarativeContent","storage"],
   "description": "Récup des données pour cir64",
   "background": {

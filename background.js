@@ -4,9 +4,13 @@ chrome.runtime.onInstalled.addListener(function() {
     });
     chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
         chrome.declarativeContent.onPageChanged.addRules([{
-            conditions: [new chrome.declarativeContent.PageStateMatcher({
-                pageUrl: {hostEquals: 'aurion.yncrea.fr'},
-            })
+            conditions: [
+                new chrome.declarativeContent.PageStateMatcher({
+                    pageUrl: {hostEquals: 'aurion.yncrea.fr'},
+                }),
+                new chrome.declarativeContent.PageStateMatcher({
+                    pageUrl: {hostEquals: 'cir64.fr'},
+                })
             ],
             actions: [new chrome.declarativeContent.ShowPageAction()]
         }]);
