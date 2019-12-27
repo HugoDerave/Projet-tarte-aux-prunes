@@ -7,7 +7,7 @@ let statusDisplay = null;
 function checkLink() {
     event.preventDefault();
 
-    let postUrl = 'https://cir64.fr/GLOBAL_V3/remote/checkToken.php';
+    let postUrl = 'https://cir64.fr/remote/checkToken.php';
     let xhr = new XMLHttpRequest();
     xhr.open('POST', postUrl, true);
     let token = document.getElementById('token');
