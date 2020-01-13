@@ -41,7 +41,28 @@ function doStuffWithDom(domContent) {
             params = params.replace(/%20/g, '+');
             let formContentType = 'application/x-www-form-urlencoded';
             xhr.setRequestHeader('Content-type', formContentType);
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4) {
+                    chrome.tabs.getSelected(null, function(tab) {
+                        if (tab.url === 'https://aurion.yncrea.fr/faces/LearnerNotationListPage.xhtml') {
+                            if(xhr.status == 200){
+                                chrome.tabs.sendMessage(tab.id, {text: 'post_success'});
+                            }else if(xhr.status == 500){
+                                chrome.tabs.sendMessage(tab.id, {text: 'post_500'});
+                            }else if(xhr.status == 404){
+                                chrome.tabs.sendMessage(tab.id, {text: 'post_notfound'});
+                            }
+                        }
+                    });
+                }
+            }
+
             xhr.send(params);
+        }else{
+            chrome.tabs.getSelected(null, function(tab) {
+                chrome.tabs.sendMessage(tab.id, {text: 'post_notset'});
+            });
         }
     });
 }

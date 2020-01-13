@@ -1,0 +1,18 @@
+.cir64{
+    height: 50px;
+    width: 100%;
+    border-radius: 25px;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.success{
+    background-color: #35a31b;
+}
+
+.error{
+    background-color: #b62624;
+}
