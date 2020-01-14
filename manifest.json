@@ -1,6 +1,6 @@
 {
   "name": "CIR64 linker",
-  "version": "1.1",
+  "version": "1.2",
   "permissions": ["tabs","activeTab","declarativeContent","storage"],
   "description": "Récup des données pour cir64",
   "background": {
@@ -8,7 +8,7 @@
     "persistent": false
   },
   "content_scripts": [{
-    "matches": ["*://aurion.yncrea.fr/*"],
+    "matches": ["*://aurion.yncrea.fr/*", "*://cir64.fr/*"],
     "js": ["content.js"],
     "css": ["style.css"]
   }],
