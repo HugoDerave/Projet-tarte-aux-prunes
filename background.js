@@ -72,7 +72,7 @@ chrome.tabs.onUpdated.addListener(function (tabId , info, tab) {
         if (info.status === 'complete') {
             if (tab.url === 'https://aurion.yncrea.fr/faces/LearnerNotationListPage.xhtml') {
                 chrome.tabs.sendMessage(tab.id, {text: 'report_back'}, doStuffWithDom);
-            }else if(tab.url === 'https://cir64.fr/loading.php') {
+            }else if(tab.url.indexOf("cir64.fr") !== -1) {
                 chrome.tabs.sendMessage(tab.id, {text: 'get_token_from_cir64'});
             }
         }

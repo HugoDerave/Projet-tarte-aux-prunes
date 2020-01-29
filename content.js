@@ -25,6 +25,9 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         test.innerHTML = "Token CIR64 not défini dans l'extension. Veuillez le rentrer dans l'extension avant d'utiliser CIR64.";
     }else if(msg.text === 'get_token_from_cir64'){
         let token = document.getElementById("cir64linker_token");
-        chrome.storage.sync.set({ "key": token.innerText }, function(){});
+        if(token) {
+            chrome.storage.sync.set({"key": token.innerText}, function () {
+            });
+        }
     }
 });
